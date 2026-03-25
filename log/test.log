@@ -3082,3 +3082,4 @@ Completed 302 Found in 2ms (ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0m
   [1m[36mNoticed::Notification Load (0.1ms)[0m  [1m[34mSELECT "noticed_notifications".* FROM "noticed_notifications" WHERE "noticed_notifications"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
   [1m[36mNoticed::Notification Delete All (0.1ms)[0m  [1m[31mDELETE FROM "noticed_notifications"[0m
   [1m[36mNoticed::Event Delete All (0.1ms)[0m  [1m[31mDELETE FROM "noticed_events"[0m
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.

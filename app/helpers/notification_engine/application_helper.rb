@@ -19,7 +19,7 @@ module NotificationEngine
       tag.a(href: path, class: css, **options) do
         safe_join([
           tag.span("Notifications", class: "notification-bell-label"),
-          (tag.span(count, class: "notification-badge") if count > 0)
+          (tag.span(count, class: "ui mini circular blue label notification-badge") if count > 0)
         ].compact)
       end
     end

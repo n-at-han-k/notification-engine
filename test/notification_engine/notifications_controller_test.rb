@@ -6,7 +6,7 @@ class NotificationEngine::NotificationsControllerTest < NotificationEngine::Inte
   def test_index_renders_with_no_notifications
     get engine_routes.notifications_path
     assert_response :success
-    assert_select ".notification-empty"
+    assert_select ".ui.placeholder.segment"
   end
 
   def test_index_renders_notifications
@@ -15,7 +15,7 @@ class NotificationEngine::NotificationsControllerTest < NotificationEngine::Inte
 
     get engine_routes.notifications_path
     assert_response :success
-    assert_select ".notification-item", 2
+    assert_select "#notifications turbo-frame", 2
   end
 
   def test_index_filters_unread
@@ -24,8 +24,8 @@ class NotificationEngine::NotificationsControllerTest < NotificationEngine::Inte
 
     get engine_routes.notifications_path(filter: "unread")
     assert_response :success
-    assert_select ".notification-item", 1
-    assert_select ".notification-item.unread", 1
+    assert_select "#notifications turbo-frame", 1
+    assert_select "#notifications .ui.blue.segment", 1
   end
 
   def test_index_filters_read
@@ -34,8 +34,8 @@ class NotificationEngine::NotificationsControllerTest < NotificationEngine::Inte
 
     get engine_routes.notifications_path(filter: "read")
     assert_response :success
-    assert_select ".notification-item", 1
-    assert_select ".notification-item.read", 1
+    assert_select "#notifications turbo-frame", 1
+    assert_select "#notifications .ui.secondary.segment", 1
   end
 
   def test_mark_as_read
@@ -120,7 +120,7 @@ class NotificationEngine::NotificationsControllerTest < NotificationEngine::Inte
 
     get engine_routes.notifications_path
     assert_response :success
-    assert_select ".notification-empty"
+    assert_select ".ui.placeholder.segment"
   ensure
     ::ApplicationController.define_method(:current_user) do
       @current_user ||= User.first_or_create!(name: "Test User")
