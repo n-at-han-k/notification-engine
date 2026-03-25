@@ -4,6 +4,7 @@ class CreateNoticedTables < ActiveRecord::Migration[8.1]
       t.string :type
       t.belongs_to :record, polymorphic: true
       t.jsonb :params
+      t.integer :notifications_count, default: 0
       t.timestamps
     end
 

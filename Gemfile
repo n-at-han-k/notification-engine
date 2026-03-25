@@ -8,5 +8,6 @@ gem "rails-active-ui", github: "n-at-han-k/rails-active-ui"
 
 group :development, :test do
   gem "rails"
-  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "pg"
+  gem "debug", platforms: %i[mri], require: "debug/prelude"
 end
