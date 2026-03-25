@@ -1,12 +1,12 @@
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  host: localhost
+  username: postgres
 
 development:
   <<: *default
-  database: storage/development.sqlite3
+  database: notification_engine_dev
 
 test:
   <<: *default
-  database: storage/test.sqlite3
+  database: notification_engine_test
