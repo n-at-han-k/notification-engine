@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Provides controllers, views, and helpers for viewing and managing " \
                      "notifications created by the noticed gem. Mark as read/unread, " \
                      "filter, and render a notification bell — GitHub-style."
-  spec.license     = "Apache-2.0"
+  spec.license = "Apache-2.0"
 
   spec.required_ruby_version = ">= 3.2"
 
