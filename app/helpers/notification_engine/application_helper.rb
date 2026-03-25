@@ -8,7 +8,7 @@ module NotificationEngine
     #   <%= notification_bell(class: "my-bell") %>
     #
     def notification_bell(**options)
-      user = send(NotificationEngine.current_user_method)
+      user = notification_engine_current_user
       return unless user
 
       count = user.notifications.unread.count
@@ -26,7 +26,7 @@ module NotificationEngine
 
     # Returns the unread notification count for the current user.
     def unread_notification_count
-      user = send(NotificationEngine.current_user_method)
+      user = notification_engine_current_user
       return 0 unless user
 
       user.notifications.unread.count
@@ -36,6 +36,15 @@ module NotificationEngine
     def active_filter_class(filter)
       current = params[:filter].presence
       current == filter ? "active" : ""
+    end
+
+    private
+
+    def notification_engine_current_user
+      method = NotificationEngine.current_user_method
+      return nil unless respond_to?(method, true)
+
+      send(method)
     end
   end
 end

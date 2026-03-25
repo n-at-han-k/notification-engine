@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+system("bundle", "install", exception: true)
+system("bundle", "exec", "rails", "db:prepare", exception: true)
+system("bundle", "exec", "rails", "db:seed", exception: true)
+puts "\nSetup complete. Run bin/dev to start the server."
