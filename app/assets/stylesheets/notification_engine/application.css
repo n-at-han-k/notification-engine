@@ -1,1 +1,164 @@
 /* NotificationEngine styles */
+
+.notification-engine {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #d1d5db;
+  margin-bottom: 0;
+}
+
+.notification-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.notification-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-filters {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.filter-link {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #374151;
+}
+
+.filter-link:hover {
+  background: #f3f4f6;
+}
+
+.filter-link.active {
+  background: #e5e7eb;
+  font-weight: 600;
+}
+
+.mark-all-read-btn {
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: #fff;
+  cursor: pointer;
+  color: #374151;
+}
+
+.mark-all-read-btn:hover {
+  background: #f3f4f6;
+}
+
+/* Notification items */
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.notification-item.unread {
+  background: #f0f7ff;
+}
+
+.notification-item.read {
+  opacity: 0.7;
+}
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.notification-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-message {
+  margin: 0 0 0.125rem 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.notification-time {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.notification-item-actions {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.notification-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  background: #fff;
+  cursor: pointer;
+  color: #374151;
+}
+
+.notification-btn:hover {
+  background: #f3f4f6;
+}
+
+.notification-btn-danger:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* Empty state */
+
+.notification-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Bell */
+
+.notification-bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background: #2563eb;
+  border-radius: 999px;
+}

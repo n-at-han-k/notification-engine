@@ -8,6 +8,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "bootsnap", require: false
+gem "noticed", ">= 2.0"
 
 # The engine under development
 gem "notification_engine", path: ".."

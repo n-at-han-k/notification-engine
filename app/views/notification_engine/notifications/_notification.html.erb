@@ -1,0 +1,27 @@
+<%= turbo_frame_tag dom_id(notification) do %>
+  <div class="notification-item <%= notification.unread? ? 'unread' : 'read' %>" id="<%= dom_id(notification) %>">
+    <% if notification.unread? %>
+      <span class="unread-dot"></span>
+    <% end %>
+
+    <div class="notification-body">
+      <% if notification.respond_to?(:message) %>
+        <p class="notification-message"><%= notification.message %></p>
+      <% else %>
+        <p class="notification-message"><%= notification.type.demodulize.underscore.humanize %></p>
+      <% end %>
+
+      <span class="notification-time"><%= time_ago_in_words(notification.created_at) %> ago</span>
+    </div>
+
+    <div class="notification-item-actions">
+      <% if notification.unread? %>
+        <%= button_to "Read", mark_as_read_notification_path(notification), method: :patch, class: "notification-btn" %>
+      <% else %>
+        <%= button_to "Unread", mark_as_unread_notification_path(notification), method: :patch, class: "notification-btn" %>
+      <% end %>
+
+      <%= button_to "Remove", notification_path(notification), method: :delete, class: "notification-btn notification-btn-danger" %>
+    </div>
+  </div>
+<% end %>
