@@ -12,7 +12,10 @@ module NotificationEngine
     end
 
     def notifications_scope
-      notification_engine_current_user.notifications.newest_first
+      user = notification_engine_current_user
+      return Noticed::Notification.none unless user
+
+      user.notifications.newest_first
     end
   end
 end
