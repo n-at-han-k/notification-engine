@@ -1,5 +1,7 @@
 # notification_engine
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/n-at-han-k/notification-engine)
+
 A template for creating Ruby gems.
 
 ## Usage
